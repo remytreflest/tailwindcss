@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="flex" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Tailwindcss</title>
+</head>
+<body class="flex flex-col grow min-h-screen">
+    <header x-data="{open : false}" class="shadow-md px-3 md:px-0">
+        <div class="container mx-auto flex justify-between items-center py-6 ">
+            <div class="font-medium">Truc de gauche</div>
+            <button class="md:hidden rounded-lg border-gray-400 p-3 border-2" :class="{'hidden': open}" x-on:click="open = !open">
+                Hamburger
+            </button>
+            <div class="flex justify-arround items-center md:flex-row flex-col" :class="{'hidden': !open}">
+                <button class="md:hidden rounded-lg border-gray-400 p-3 border-2 m-3" x-on:click="open = false">
+                    Fermer
+                </button>
+                <ul class="flex flex-col md:flex-row">
+                    <li class="mx-3 font-medium rounded-md p-1 py-1 hover:bg-world-in-green">
+                        <a href="#">Truc de droite 1</a>
+                    </li>
+                    <li class="mx-3 font-medium rounded-md p-1 py-1 hover:bg-world-in-green">
+                        <a href="#">Truc de droite 2</a>
+                    </li>
+                    <li class="mx-3 font-medium rounded-md p-1 py-1 hover:bg-world-in-green">
+                        <a href="#">Truc de droite 3</a>
+                    </li>
+                    <li class="mx-3 font-medium rounded-md p-1 py-1 hover:bg-world-in-green">
+                        <a href="#">Truc de droite 4</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="flex grow justify-center py-6">
+        <div class=""></div>
+        <div class="flex flex-col w-1/2 p-2 space-y-6">
+            <div class="text-center font-bold">
+                Bonjour
+            </div>
+            <div class="text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            </div>
+            <div class="flex items-center justify-center">
+                <button class="rounded-lg bg-world-in-green p-4 text-white hover:bg-purple-500">En savoir plus</button>
+            </div>
+        </div>
+        <div class=""></div>
+    </main>
+    <footer class="flex items-center justify-center py-6">
+        FOOTER
+    </footer>
+</body>
+</html>
